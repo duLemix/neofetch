@@ -945,6 +945,9 @@ get_os() {
         AIX)      os=AIX ;;
         IRIX*)    os=IRIX ;;
         FreeMiNT) os=FreeMiNT ;;
+        CurtainOS)
+            os=CurtainOS
+        ;;
 
         Linux|GNU*)
             os=Linux
@@ -5146,7 +5149,7 @@ ASCII:
                                 BlackArch, BLAG, BlankOn, BlueLight, Bodhi, bonsai, BSD, BunsenLabs,
                                 Calculate, Carbs, CentOS, Chakra, ChaletOS, Chapeau, Chrom,
                                 Cleanjaro, ClearOS, Clear_Linux, Clover, Condres, Container_Linux,
-                                Crystal Linux, CRUX, Cucumber, dahlia, Debian, Deepin, DesaOS, Devuan,
+                                Crystal Linux, CRUX, Cucumber, CurtainOS, dahlia, Debian, Deepin, DesaOS, Devuan,
                                 DracOS, DarkOs, Itc, DragonFly, Drauger, Elementary, EndeavourOS, Endless,
                                 EuroLinux, Exherbo, Fedora, Feren, FreeBSD, FreeMiNT, Frugalware,
                                 Funtoo, GalliumOS, Garuda, Gentoo, Pentoo, gNewSense, GNOME, GNU,
@@ -5182,7 +5185,7 @@ ASCII:
                                 CRUX, Debian, Gentoo, FreeBSD, Mac, NixOS, OpenBSD, android,
                                 Artix, CentOS, Cleanjaro, ElementaryOS, GUIX, Hyperbola,
                                 Manjaro, MXLinux, NetBSD, Parabola, POP_OS, PureOS,
-                                Slackware, SunOS, LinuxLite, OpenSUSE, Raspbian,
+                                Slackware, SunOS, LinuxLite, OpenSUSE, Raspbian, CurtainOS,
                                 postmarketOS, and Void have a smaller logo variant.
 
                                 NOTE: Use '{distro name}_small' to use the small variants.
