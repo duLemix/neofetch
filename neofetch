@@ -6980,7 +6980,7 @@ o/${c2}--...::-:/::/:-......-::::::-/-...-${c1}:/o
 EOF
         ;;
 
-        "CurtainOS_small"*)
+        "curtainos_small"*)
             set_colors 1 3
             read -rf '' ascii_data <<'EOF'
 ${c2}=================
