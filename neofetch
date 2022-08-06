@@ -786,9 +786,9 @@ image_source="auto"
 #       Artix, Arya, Bedrock, Bitrig, BlackArch, BLAG, BlankOn, BlueLight,
 #       Bodhi, bonsai, BSD, BunsenLabs, Calculate, Carbs, CentOS, Chakra, ChaletOS,
 #       Chapeau, Chrom*, Cleanjaro, ClearOS, Clear_Linux, Clover, Condres,
-#       Container_Linux, Crystal Linux, CRUX, Cucumber, dahlia, Debian, Deepin,
-#       DesaOS, Devuan, DracOS, DarkOs, Itc, DragonFly, Drauger, Elementary,
-#       EndeavourOS, Endless, EuroLinux, Exherbo, Fedora, Feren, FreeBSD,
+#       Container_Linux, Crystal Linux, CRUX, Cucumber, CurtainOS, dahlia, Debian,
+#       Deepin, DesaOS, Devuan, DracOS, DarkOs, Itc, DragonFly, Drauger,
+#       Elementary, EndeavourOS, Endless, EuroLinux, Exherbo, Fedora, Feren, FreeBSD,
 #       FreeMiNT, Frugalware, Funtoo, GalliumOS, Garuda, Gentoo, Pentoo,
 #       gNewSense, GNOME, GNU, GoboLinux, Grombyang, Guix, Haiku, Huayra, HydroOS
 #       Hyperbola, iglunix, janus, Kali, KaOS, KDE_neon, Kibojoe, Kogaion, Korora,
@@ -818,7 +818,7 @@ image_source="auto"
 #       Artix, CentOS, Cleanjaro, ElementaryOS, GUIX, Hyperbola,
 #       Manjaro, MXLinux, NetBSD, Parabola, POP_OS, PureOS,
 #       Slackware, SunOS, LinuxLite, OpenSUSE, Raspbian,
-#       postmarketOS, and Void have a smaller logo variant.
+#       postmarketOS, CurtainOS and Void have a smaller logo variant.
 #       Use '{distro name}_small' to use the small variants.
 ascii_distro="auto"
 
@@ -945,10 +945,7 @@ get_os() {
         AIX)      os=AIX ;;
         IRIX*)    os=IRIX ;;
         FreeMiNT) os=FreeMiNT ;;
-        CurtainOS)
-            os=CurtainOS
-        ;;
-
+        
         Linux|GNU*)
             os=Linux
         ;;
@@ -986,6 +983,13 @@ get_distro() {
                     *) distro="Red Star OS $(awk -F'[^0-9*]' '$0=$2' /etc/redstar-release)"
                 esac
 
+            elif [[ -f /etc/curtain-release ]]; then
+                case $distro_shorthand in 
+                    on) distro="CurtainOS" ;;
+                    tiny) distro="CrtnOS" ;;
+                    off) distro="Curtain Operating Systems" ;;
+                esac
+            
             elif [[ -f /etc/armbian-release ]]; then
                 . /etc/armbian-release
                 distro="Armbian $DISTRIBUTION_CODENAME (${VERSION:-})"
@@ -5185,8 +5189,8 @@ ASCII:
                                 CRUX, Debian, Gentoo, FreeBSD, Mac, NixOS, OpenBSD, android,
                                 Artix, CentOS, Cleanjaro, ElementaryOS, GUIX, Hyperbola,
                                 Manjaro, MXLinux, NetBSD, Parabola, POP_OS, PureOS,
-                                Slackware, SunOS, LinuxLite, OpenSUSE, Raspbian, CurtainOS,
-                                postmarketOS, and Void have a smaller logo variant.
+                                Slackware, SunOS, LinuxLite, OpenSUSE, Raspbian, postmarketOS,
+                                CurtainOS and Void have a smaller logo variant.
 
                                 NOTE: Use '{distro name}_small' to use the small variants.
 
